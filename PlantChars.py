@@ -1,0 +1,94 @@
+from plantcv.plantcv.morphology import skeletonize,segment_skeleton,segment_path_length,find_branch_pts,prune
+from plantcv.plantcv.morphology import find_tips
+import plantcv.plantcv as pcv
+import cv2
+import numpy as np
+
+class PlantChars:
+    def __init__(self):
+        self.image=None
+        self.mask=None
+    def loadImage(self,path):
+        self.image=cv2.imread(path)
+        # Convert RGB to HSV and extract the saturation channel
+        s = pcv.rgb2gray_hsv(rgb_img=self.image, channel='s')
+        # Take a binary threshold to separate plant from background. 
+        # Threshold can be on either light or dark objects in the image.
+        s_thresh = pcv.threshold.binary(gray_img=s, threshold=85, max_value=255, object_type='light')
+        # Median Blur to clean noise 
+        s_mblur = pcv.median_blur(gray_img=s_thresh, ksize=5)
+        self.mask=s_mblur
+        self.mask=cv2.threshold(self.mask, 127, 255, cv2.THRESH_BINARY)[1]
+    def whiteMask(self):
+        # Apply mask (for VIS images, mask_color=white)
+        mask=pcv.apply_mask(img=self.image, mask=self.mask, mask_color='white')
+        pcv.print_image(mask, '/home/artium/Desktop/master/image processing/LeafDetector/masked.png')
+        return mask
+    def skeletonize(self):
+        skel=skeletonize(self.mask)
+        pcv.print_image(skel, '/home/artium/Desktop/master/image processing/LeafDetector/skeleton.png')
+        return skel
+    def skeleton(self):
+        img=self.mask.copy()
+        size = np.size(img)
+        skel = np.zeros(img.shape,np.uint8)
+        
+        ret,img = cv2.threshold(img,127,255,0)
+        element = cv2.getStructuringElement(cv2.MORPH_CROSS,(3,3))
+        done = False
+        
+        while( not done):
+            eroded = cv2.erode(img,element)
+            temp = cv2.dilate(eroded,element)
+            temp = cv2.subtract(img,temp)
+            skel = cv2.bitwise_or(skel,temp)
+            img = eroded.copy()
+        
+            zeros = size - cv2.countNonZero(img)
+            if zeros==size:
+                done = True
+        pcv.print_image(skel, '/home/artium/Desktop/master/image processing/LeafDetector/skel.png')
+        return skel
+    def prune(self):
+        #skeleton=pcv.closing(gray_img=self.skeleton())
+        img1, seg_img, edge_objects = prune(skel_img=self.skeletonize(), size=15,mask=self.mask)
+        pcv.print_image(img1, '/home/artium/Desktop/master/image processing/LeafDetector/pruned.png')
+        return img1
+    def findBranches(self):
+        branches=find_branch_pts(skel_img=self.prune(),mask=self.mask)
+        pcv.print_image(branches, '/home/artium/Desktop/master/image processing/LeafDetector/branches.png')
+        return len(pcv.outputs.observations['default']['branch_pts']['value'])
+    def findTips(self):
+        tip_pts_mask=find_tips(skel_img=self.skeletonize(), label="tips",mask=self.mask)
+        pcv.print_image(tip_pts_mask, '/home/artium/Desktop/master/image processing/LeafDetector/tips.png')
+        return tip_pts_mask
+    def height(self):
+        # Identify objects and contours
+        mask=self.whiteMask()
+        id_objects, obj_hierarchy = pcv.find_objects(img=mask, mask=self.mask)
+        # Define the region of interest (ROI) 
+        roi1, roi_hierarchy= pcv.roi.rectangle(img=mask, x=100, y=100, h=200, w=200)
+        # Decide which objects to keep
+        roi_objects, hierarchy3, kept_mask, obj_area = pcv.roi_objects(img=self.image, roi_contour=roi1, 
+                                                               roi_hierarchy=roi_hierarchy, 
+                                                               object_contour=id_objects, 
+                                                               obj_hierarchy=obj_hierarchy,
+                                                               roi_type='partial')
+        # Object combine kept objects
+        obj, mask = pcv.object_composition(img=self.image, contours=roi_objects, hierarchy=hierarchy3)
+        ############### Analysis ################ 
+        # Find shape properties, data gets stored to an Outputs class automatically
+        analysis_image = pcv.analyze_object(img=self.image, obj=obj, mask=self.mask, label="default")
+        pcv.print_image(analysis_image, '/home/artium/Desktop/master/image processing/LeafDetector/height.png')
+
+
+
+pc=PlantChars()
+pc.loadImage('plants/plant.jpg')
+pcv.print_image(pc.mask, '/home/artium/Desktop/master/image processing/LeafDetector/binary.png')
+pc.height()
+print(pcv.outputs.observations)
+#branches=pc.findBranches()
+#pc.findTips()
+#print(branches)
+
