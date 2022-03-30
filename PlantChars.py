@@ -1,13 +1,15 @@
-from plantcv.plantcv.morphology import skeletonize,segment_skeleton,segment_path_length,find_branch_pts,prune
-from plantcv.plantcv.morphology import find_tips
+from plantcv.plantcv.morphology import skeletonize,segment_skeleton\
+    ,segment_path_length,find_branch_pts,prune,find_tips
 import plantcv.plantcv as pcv
 import cv2
 import numpy as np
+import json
 
 class PlantChars:
     def __init__(self):
         self.image=None
         self.mask=None
+        self.skel=None
     def loadImage(self,path):
         self.image=cv2.imread(path)
         # Convert RGB to HSV and extract the saturation channel
@@ -22,11 +24,11 @@ class PlantChars:
     def whiteMask(self):
         # Apply mask (for VIS images, mask_color=white)
         mask=pcv.apply_mask(img=self.image, mask=self.mask, mask_color='white')
-        pcv.print_image(mask, '/home/artium/Desktop/master/image processing/LeafDetector/masked.png')
+        #pcv.print_image(mask, '/home/artium/Desktop/master/image processing/LeafDetector/masked.png')
         return mask
     def skeletonize(self):
         skel=skeletonize(self.mask)
-        pcv.print_image(skel, '/home/artium/Desktop/master/image processing/LeafDetector/skeleton.png')
+        #pcv.print_image(skel, '/home/artium/Desktop/master/image processing/LeafDetector/skeleton.png')
         return skel
     def skeleton(self):
         img=self.mask.copy()
@@ -47,20 +49,24 @@ class PlantChars:
             zeros = size - cv2.countNonZero(img)
             if zeros==size:
                 done = True
-        pcv.print_image(skel, '/home/artium/Desktop/master/image processing/LeafDetector/skel.png')
+        #pcv.print_image(skel, '/home/artium/Desktop/master/image processing/LeafDetector/skel.png')
         return skel
     def prune(self):
         #skeleton=pcv.closing(gray_img=self.skeleton())
-        img1, seg_img, edge_objects = prune(skel_img=self.skeletonize(), size=15,mask=self.mask)
-        pcv.print_image(img1, '/home/artium/Desktop/master/image processing/LeafDetector/pruned.png')
+        if self.skel is None:
+            self.skel=self.skeletonize()
+        img1, seg_img, edge_objects = prune(skel_img=self.skel, size=15,mask=self.mask)
+        #pcv.print_image(img1, '/home/artium/Desktop/master/image processing/LeafDetector/pruned.png')
         return img1
     def findBranches(self):
         branches=find_branch_pts(skel_img=self.prune(),mask=self.mask)
-        pcv.print_image(branches, '/home/artium/Desktop/master/image processing/LeafDetector/branches.png')
-        return len(pcv.outputs.observations['default']['branch_pts']['value'])
+        #pcv.print_image(branches, '/home/artium/Desktop/master/image processing/LeafDetector/branches.png')
+        return branches
     def findTips(self):
-        tip_pts_mask=find_tips(skel_img=self.skeletonize(), label="tips",mask=self.mask)
-        pcv.print_image(tip_pts_mask, '/home/artium/Desktop/master/image processing/LeafDetector/tips.png')
+        if self.skel is None:
+            self.skel=self.skeletonize()
+        tip_pts_mask=find_tips(skel_img=self.skel, label="tips",mask=self.mask)
+        #pcv.print_image(tip_pts_mask, '/home/artium/Desktop/master/image processing/LeafDetector/tips.png')
         return tip_pts_mask
     def height(self):
         # Identify objects and contours
@@ -79,16 +85,7 @@ class PlantChars:
         ############### Analysis ################ 
         # Find shape properties, data gets stored to an Outputs class automatically
         analysis_image = pcv.analyze_object(img=self.image, obj=obj, mask=self.mask, label="default")
-        pcv.print_image(analysis_image, '/home/artium/Desktop/master/image processing/LeafDetector/height.png')
-
-
-
-pc=PlantChars()
-pc.loadImage('plants/plant.jpg')
-pcv.print_image(pc.mask, '/home/artium/Desktop/master/image processing/LeafDetector/binary.png')
-pc.height()
-print(pcv.outputs.observations)
-#branches=pc.findBranches()
-#pc.findTips()
-#print(branches)
-
+        #pcv.print_image(analysis_image, '/home/artium/Desktop/master/image processing/LeafDetector/height.png')
+    
+    def fullImageTraitment(self):
+        return (self.image,self.mask,self.whiteMask(),self.prune(),self.findBranches(),self.findTips(),self.height(),self.skel,json.dumps(pcv.outputs.observations))
