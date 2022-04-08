@@ -6,11 +6,9 @@ Describing a plant using Image processing library PlantCV
 
 The first thing you need to do is treat all the growth stages inside the project.
 
-To do so, navigate to src/plant_treatment.py
+To do so, run the command `python3 src/plant_treatment.py` on the root folder
 
-Now run that code using: `python3 plant_treatment.py`
-
-Once done Open the juperbook `plants.ipynb` to see the results
+Once done, open the juperbook `plants.ipynb` to see the results
 
 #### Saving image to disk:
 
