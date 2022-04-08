@@ -1,0 +1,1116 @@
+{
+ "default": {
+  "branch_pts": {
+   "trait": "list of branch-point coordinates identified from a skeleton",
+   "method": "plantcv.plantcv.morphology.find_branch_pts",
+   "scale": "pixels",
+   "datatype": "<class 'list'>",
+   "value": [
+    [
+     609,
+     782
+    ],
+    [
+     594,
+     773
+    ],
+    [
+     596,
+     757
+    ],
+    [
+     595,
+     748
+    ],
+    [
+     578,
+     748
+    ],
+    [
+     596,
+     731
+    ],
+    [
+     595,
+     728
+    ],
+    [
+     590,
+     724
+    ],
+    [
+     588,
+     718
+    ],
+    [
+     608,
+     711
+    ],
+    [
+     595,
+     710
+    ],
+    [
+     602,
+     707
+    ],
+    [
+     597,
+     706
+    ],
+    [
+     585,
+     704
+    ],
+    [
+     611,
+     702
+    ],
+    [
+     584,
+     701
+    ],
+    [
+     607,
+     699
+    ],
+    [
+     582,
+     671
+    ],
+    [
+     615,
+     640
+    ],
+    [
+     579,
+     637
+    ],
+    [
+     627,
+     634
+    ],
+    [
+     631,
+     628
+    ],
+    [
+     580,
+     624
+    ],
+    [
+     613,
+     621
+    ],
+    [
+     624,
+     619
+    ],
+    [
+     613,
+     619
+    ],
+    [
+     613,
+     616
+    ],
+    [
+     642,
+     615
+    ],
+    [
+     629,
+     614
+    ],
+    [
+     648,
+     611
+    ],
+    [
+     627,
+     610
+    ],
+    [
+     624,
+     609
+    ],
+    [
+     619,
+     609
+    ],
+    [
+     651,
+     605
+    ],
+    [
+     618,
+     604
+    ],
+    [
+     640,
+     602
+    ],
+    [
+     618,
+     602
+    ],
+    [
+     660,
+     598
+    ],
+    [
+     618,
+     597
+    ],
+    [
+     598,
+     597
+    ],
+    [
+     561,
+     595
+    ],
+    [
+     656,
+     594
+    ],
+    [
+     563,
+     594
+    ],
+    [
+     663,
+     593
+    ],
+    [
+     661,
+     592
+    ],
+    [
+     655,
+     592
+    ],
+    [
+     620,
+     592
+    ],
+    [
+     573,
+     591
+    ],
+    [
+     590,
+     590
+    ],
+    [
+     575,
+     590
+    ],
+    [
+     645,
+     589
+    ],
+    [
+     633,
+     587
+    ],
+    [
+     668,
+     586
+    ],
+    [
+     649,
+     585
+    ],
+    [
+     588,
+     584
+    ],
+    [
+     655,
+     583
+    ],
+    [
+     649,
+     583
+    ],
+    [
+     576,
+     581
+    ],
+    [
+     644,
+     580
+    ],
+    [
+     652,
+     579
+    ],
+    [
+     644,
+     578
+    ],
+    [
+     636,
+     578
+    ],
+    [
+     652,
+     576
+    ],
+    [
+     643,
+     576
+    ],
+    [
+     639,
+     576
+    ],
+    [
+     637,
+     575
+    ],
+    [
+     625,
+     574
+    ],
+    [
+     607,
+     574
+    ],
+    [
+     693,
+     572
+    ],
+    [
+     693,
+     570
+    ],
+    [
+     633,
+     570
+    ],
+    [
+     672,
+     568
+    ],
+    [
+     643,
+     568
+    ],
+    [
+     686,
+     564
+    ],
+    [
+     664,
+     563
+    ],
+    [
+     633,
+     563
+    ],
+    [
+     626,
+     563
+    ],
+    [
+     595,
+     562
+    ],
+    [
+     648,
+     559
+    ],
+    [
+     704,
+     558
+    ],
+    [
+     695,
+     558
+    ],
+    [
+     701,
+     556
+    ],
+    [
+     707,
+     555
+    ],
+    [
+     703,
+     553
+    ],
+    [
+     692,
+     553
+    ],
+    [
+     661,
+     549
+    ],
+    [
+     632,
+     549
+    ],
+    [
+     637,
+     548
+    ],
+    [
+     635,
+     548
+    ],
+    [
+     637,
+     544
+    ],
+    [
+     626,
+     544
+    ],
+    [
+     601,
+     540
+    ],
+    [
+     677,
+     535
+    ],
+    [
+     612,
+     532
+    ],
+    [
+     650,
+     531
+    ],
+    [
+     663,
+     530
+    ],
+    [
+     662,
+     531
+    ],
+    [
+     610,
+     530
+    ],
+    [
+     680,
+     525
+    ],
+    [
+     602,
+     525
+    ],
+    [
+     646,
+     522
+    ],
+    [
+     683,
+     521
+    ],
+    [
+     687,
+     518
+    ],
+    [
+     675,
+     514
+    ],
+    [
+     635,
+     513
+    ],
+    [
+     604,
+     507
+    ],
+    [
+     617,
+     502
+    ],
+    [
+     612,
+     502
+    ],
+    [
+     592,
+     477
+    ],
+    [
+     590,
+     473
+    ],
+    [
+     635,
+     469
+    ],
+    [
+     636,
+     463
+    ],
+    [
+     605,
+     463
+    ],
+    [
+     635,
+     461
+    ],
+    [
+     584,
+     459
+    ],
+    [
+     635,
+     446
+    ],
+    [
+     633,
+     442
+    ],
+    [
+     626,
+     436
+    ],
+    [
+     644,
+     434
+    ]
+   ],
+   "label": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118
+   ]
+  },
+  "tips": {
+   "trait": "list of tip coordinates identified from a skeleton",
+   "method": "plantcv.plantcv.morphology.find_tips",
+   "scale": "pixels",
+   "datatype": "<class 'list'>",
+   "value": [
+    [
+     577,
+     788
+    ],
+    [
+     608,
+     768
+    ],
+    [
+     576,
+     731
+    ],
+    [
+     577,
+     724
+    ],
+    [
+     603,
+     704
+    ],
+    [
+     615,
+     703
+    ],
+    [
+     595,
+     703
+    ],
+    [
+     593,
+     697
+    ],
+    [
+     604,
+     696
+    ],
+    [
+     613,
+     689
+    ],
+    [
+     584,
+     688
+    ],
+    [
+     591,
+     673
+    ],
+    [
+     583,
+     654
+    ],
+    [
+     568,
+     639
+    ],
+    [
+     590,
+     632
+    ],
+    [
+     633,
+     611
+    ],
+    [
+     635,
+     603
+    ],
+    [
+     647,
+     600
+    ],
+    [
+     638,
+     593
+    ],
+    [
+     639,
+     591
+    ],
+    [
+     631,
+     590
+    ],
+    [
+     694,
+     575
+    ],
+    [
+     696,
+     560
+    ],
+    [
+     702,
+     550
+    ],
+    [
+     707,
+     548
+    ],
+    [
+     687,
+     542
+    ],
+    [
+     676,
+     532
+    ],
+    [
+     664,
+     524
+    ],
+    [
+     694,
+     523
+    ],
+    [
+     666,
+     521
+    ],
+    [
+     672,
+     514
+    ],
+    [
+     686,
+     512
+    ],
+    [
+     672,
+     512
+    ],
+    [
+     691,
+     499
+    ],
+    [
+     661,
+     489
+    ],
+    [
+     571,
+     477
+    ],
+    [
+     605,
+     459
+    ],
+    [
+     579,
+     454
+    ],
+    [
+     618,
+     453
+    ],
+    [
+     654,
+     450
+    ],
+    [
+     579,
+     449
+    ],
+    [
+     654,
+     448
+    ],
+    [
+     621,
+     448
+    ],
+    [
+     632,
+     437
+    ],
+    [
+     647,
+     435
+    ],
+    [
+     647,
+     433
+    ],
+    [
+     625,
+     433
+    ]
+   ],
+   "label": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46
+   ]
+  },
+  "in_bounds": {
+   "trait": "whether the plant goes out of bounds ",
+   "method": "plantcv.plantcv.within_frame",
+   "scale": "none",
+   "datatype": "<class 'bool'>",
+   "value": false,
+   "label": "none"
+  },
+  "area": {
+   "trait": "area",
+   "method": "plantcv.plantcv.analyze_object",
+   "scale": "pixels",
+   "datatype": "<class 'int'>",
+   "value": 25266.0,
+   "label": "pixels"
+  },
+  "convex_hull_area": {
+   "trait": "convex hull area",
+   "method": "plantcv.plantcv.analyze_object",
+   "scale": "pixels",
+   "datatype": "<class 'int'>",
+   "value": 36727.5,
+   "label": "pixels"
+  },
+  "solidity": {
+   "trait": "solidity",
+   "method": "plantcv.plantcv.analyze_object",
+   "scale": "none",
+   "datatype": "<class 'float'>",
+   "value": 0.687931386563202,
+   "label": "none"
+  },
+  "perimeter": {
+   "trait": "perimeter",
+   "method": "plantcv.plantcv.analyze_object",
+   "scale": "pixels",
+   "datatype": "<class 'int'>",
+   "value": 3730.1860489845276,
+   "label": "pixels"
+  },
+  "width": {
+   "trait": "width",
+   "method": "plantcv.plantcv.analyze_object",
+   "scale": "pixels",
+   "datatype": "<class 'int'>",
+   "value": 153,
+   "label": "pixels"
+  },
+  "height": {
+   "trait": "height",
+   "method": "plantcv.plantcv.analyze_object",
+   "scale": "pixels",
+   "datatype": "<class 'int'>",
+   "value": 358,
+   "label": "pixels"
+  },
+  "longest_path": {
+   "trait": "longest path",
+   "method": "plantcv.plantcv.analyze_object",
+   "scale": "pixels",
+   "datatype": "<class 'int'>",
+   "value": 2585,
+   "label": "pixels"
+  },
+  "center_of_mass": {
+   "trait": "center of mass",
+   "method": "plantcv.plantcv.analyze_object",
+   "scale": "none",
+   "datatype": "<class 'tuple'>",
+   "value": [
+    617.8083590596058,
+    579.516464814375
+   ],
+   "label": [
+    "x",
+    "y"
+   ]
+  },
+  "convex_hull_vertices": {
+   "trait": "convex hull vertices",
+   "method": "plantcv.plantcv.analyze_object",
+   "scale": "none",
+   "datatype": "<class 'int'>",
+   "value": 17,
+   "label": "none"
+  },
+  "object_in_frame": {
+   "trait": "object in frame",
+   "method": "plantcv.plantcv.analyze_object",
+   "scale": "none",
+   "datatype": "<class 'bool'>",
+   "value": false,
+   "label": "none"
+  },
+  "ellipse_center": {
+   "trait": "ellipse center",
+   "method": "plantcv.plantcv.analyze_object",
+   "scale": "none",
+   "datatype": "<class 'tuple'>",
+   "value": [
+    623.4681396484375,
+    586.2387084960938
+   ],
+   "label": [
+    "x",
+    "y"
+   ]
+  },
+  "ellipse_major_axis": {
+   "trait": "ellipse major axis length",
+   "method": "plantcv.plantcv.analyze_object",
+   "scale": "pixels",
+   "datatype": "<class 'int'>",
+   "value": 331.6084899902344,
+   "label": "pixels"
+  },
+  "ellipse_minor_axis": {
+   "trait": "ellipse minor axis length",
+   "method": "plantcv.plantcv.analyze_object",
+   "scale": "pixels",
+   "datatype": "<class 'int'>",
+   "value": 133.2976837158203,
+   "label": "pixels"
+  },
+  "ellipse_angle": {
+   "trait": "ellipse major axis angle",
+   "method": "plantcv.plantcv.analyze_object",
+   "scale": "degrees",
+   "datatype": "<class 'float'>",
+   "value": 3.3594536781311035,
+   "label": "degrees"
+  },
+  "ellipse_eccentricity": {
+   "trait": "ellipse eccentricity",
+   "method": "plantcv.plantcv.analyze_object",
+   "scale": "none",
+   "datatype": "<class 'float'>",
+   "value": 0.915651488655012,
+   "label": "none"
+  }
+ },
+ "tips": {
+  "tips": {
+   "trait": "list of tip coordinates identified from a skeleton",
+   "method": "plantcv.plantcv.morphology.find_tips",
+   "scale": "pixels",
+   "datatype": "<class 'list'>",
+   "value": [
+    [
+     577,
+     787
+    ],
+    [
+     607,
+     768
+    ],
+    [
+     578,
+     724
+    ],
+    [
+     593,
+     698
+    ],
+    [
+     591,
+     672
+    ],
+    [
+     568,
+     638
+    ],
+    [
+     589,
+     632
+    ],
+    [
+     707,
+     549
+    ],
+    [
+     686,
+     542
+    ],
+    [
+     693,
+     523
+    ],
+    [
+     663,
+     523
+    ],
+    [
+     673,
+     513
+    ],
+    [
+     691,
+     500
+    ],
+    [
+     660,
+     489
+    ],
+    [
+     571,
+     478
+    ],
+    [
+     604,
+     460
+    ],
+    [
+     579,
+     455
+    ],
+    [
+     619,
+     454
+    ],
+    [
+     580,
+     450
+    ],
+    [
+     653,
+     449
+    ],
+    [
+     622,
+     449
+    ],
+    [
+     646,
+     434
+    ]
+   ],
+   "label": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+   ]
+  }
+ }
+}
