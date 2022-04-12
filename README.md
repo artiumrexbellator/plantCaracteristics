@@ -2,6 +2,10 @@
 
 Describing a plant using Image processing library PlantCV
 
+# The results
+
+The results can be seen in jupyter book inside src folder, just open `src/plants.ipynb` and you will see the results
+
 # How to use
 
 The first thing you need to do is treat all the growth stages inside the project.
