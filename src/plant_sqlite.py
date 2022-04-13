@@ -6,7 +6,7 @@ def insert_plant(id, raw_image, binary_image, masked_image, pruned_image,
                  branches_image, tips_image, height_image, skeleton_image,
                  metadata):
     try:
-        connection = sqlite3.connect('./plant.db')
+        connection = sqlite3.connect('./database/plant.db')
         cursor = connection.cursor()
         query = f"INSERT INTO plants (id, raw_image, binary_image, masked_image, pruned_image, branches_image, tips_image, height_image, skeleton_image, metadata) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         cursor.execute(
@@ -26,7 +26,7 @@ def insert_plant(id, raw_image, binary_image, masked_image, pruned_image,
 
 def select_plants():
     try:
-        connection = sqlite3.connect('./plant.db')
+        connection = sqlite3.connect('./database/plant.db')
         cursor = connection.cursor()
         query = "SELECT * FROM plants"
         images = []
