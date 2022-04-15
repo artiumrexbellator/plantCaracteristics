@@ -67,3 +67,20 @@ def select_plants():
     finally:
         if connection:
             connection.close()
+
+
+def select_plants_data():
+    try:
+        connection = sqlite3.connect('./database/plant.db')
+        cursor = connection.cursor()
+        metadatas = []
+        for row in cursor.execute("SELECT * FROM plants"):
+            metadatas.append(row[-1])
+
+        cursor.close()
+        return metadatas
+    except sqlite3.Error as error:
+        print("Error selecting data:", error)
+    finally:
+        if connection:
+            connection.close()
