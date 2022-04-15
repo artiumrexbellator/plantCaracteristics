@@ -17,3 +17,10 @@ Once done, open the juperbook `plants.ipynb` to see the results
 #### Saving image to disk:
 
 `pcv.print_image(purned_image, f"{path}_purned.jpg")`
+
+#### How to use 3D models based on stl
+
+- Run 3D_using_stl.ipynb
+- Assign the path of the image in path variable
+- the result will be generated as plant.stl file
+- for a better vision,convert stl file to obj,otherwise you still can import that file using Blender.
