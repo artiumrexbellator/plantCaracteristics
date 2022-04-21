@@ -30,6 +30,10 @@ class PlantChars:
         s_mblur = pcv.median_blur(gray_img=s_thresh, ksize=5)
         self.mask = s_mblur
         self.mask = cv2.threshold(self.mask, 127, 255, cv2.THRESH_BINARY)[1]
+        pcv.print_image(
+            self.mask,
+            '/home/artium/Desktop/master/image_processing/LeafDetector/binary.png'
+        )
 
     def whiteMask(self):
         # Apply mask (for VIS images, mask_color=white)
@@ -41,7 +45,10 @@ class PlantChars:
 
     def skeletonize(self):
         skel = skeletonize(self.mask)
-        #pcv.print_image(skel, '/home/artium/Desktop/master/image processing/LeafDetector/skeleton.png')
+        pcv.print_image(
+            skel,
+            '/home/artium/Desktop/master/image_processing/LeafDetector/skel.png'
+        )
         return skel
 
     def skeleton(self):
@@ -63,7 +70,7 @@ class PlantChars:
             zeros = size - cv2.countNonZero(img)
             if zeros == size:
                 done = True
-        #pcv.print_image(skel, '/home/artium/Desktop/master/image processing/LeafDetector/skel.png')
+
         return skel
 
     def prune(self):
@@ -141,3 +148,9 @@ class PlantChars:
         self.encodeImage(np.uint8(self.height())),
         self.encodeImage(np.uint8(self.skel)),
         json.dumps(pcv.outputs.observations))
+
+pc = PlantChars()
+pc.loadImage(
+    '/home/artium/Desktop/master/image_processing/LeafDetector/src/database/plants/stage08.jpg'
+)
+pc.skeletonize()
